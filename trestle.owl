@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://nickrobison.com/dissertation/trestle.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://nickrobison.com/dissertation/trestle.owl">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.opengis.net/ont/geosparql</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1 - Initial spatial concept approach</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Dataset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valid_to"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM2_Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal_Fact"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM2_Code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Temporal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Dataset_Properties"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spatial_Fact"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#STR2_Year"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#exists_to"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM1_Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spatial_Concept"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM1_Code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#exists_from"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DISP_Area"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Brundi_Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#fact_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#UUID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GAUL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM0_Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valid_from"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_fact"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM0_Code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#EXP2_Year"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fact"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Burundi_0"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Fact"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#valid_from"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fact"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#valid_to"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GAUL"/>
+        <Class IRI="#Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Concept"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_fact"/>
+            <Class IRI="#Fact"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Concept"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#exists_from"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Concept"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#UUID"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Concept"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#exists_to"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Fact"/>
+        <Class IRI="#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temporal_Fact"/>
+        <Class IRI="#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+            <Datatype IRI="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        </DataSomeValuesFrom>
+        <Class IRI="#Spatial_Fact"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Fact"/>
+        <Class IRI="#Spatial_Concept"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Spatial_Fact"/>
+        <Class IRI="#Temporal_Fact"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#Brundi_Object"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#Brundi_Object"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#Brundi_Object"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM0_Code"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">43</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM0_Name"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Burundi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_from"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_to"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (30 10)</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#fact_of"/>
+        <ObjectProperty IRI="#has_fact"/>
+    </InverseObjectProperties>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM0_Code"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM0_Name"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM1_Code"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM1_Name"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM2_Code"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#ADM2_Name"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#DISP_Area"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#EXP2_Year"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#GAUL_Properties"/>
+        <DataProperty IRI="#Dataset_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#STR2_Year"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#Status"/>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#exists_from"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#exists_to"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#valid_from"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#valid_to"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#exists_from"/>
+        <Class IRI="#Spatial_Concept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#exists_to"/>
+        <Class IRI="#Spatial_Concept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#valid_from"/>
+        <Class IRI="#Fact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#valid_to"/>
+        <Class IRI="#Fact"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM0_Code"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM0_Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM1_Code"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM1_Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM2_Code"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ADM2_Name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#DISP_Area"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#EXP2_Year"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#STR2_Year"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Status"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Temporal"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DisjointDataProperties>
+        <DataProperty IRI="#exists_from"/>
+        <DataProperty IRI="#valid_from"/>
+    </DisjointDataProperties>
+    <DisjointDataProperties>
+        <DataProperty IRI="#exists_from"/>
+        <DataProperty IRI="#valid_to"/>
+    </DisjointDataProperties>
+    <DisjointDataProperties>
+        <DataProperty IRI="#exists_to"/>
+        <DataProperty IRI="#valid_from"/>
+    </DisjointDataProperties>
+    <DisjointDataProperties>
+        <DataProperty IRI="#exists_to"/>
+        <DataProperty IRI="#valid_to"/>
+    </DisjointDataProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DISP_Area</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Unsettled territory: Yes/No</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EXP2_Year</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">expiry year of the administrative unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GAUL</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GAUL dataset from FAO</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#STR2_Year</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">creation year of the administrative unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Status</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Status of the country</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
