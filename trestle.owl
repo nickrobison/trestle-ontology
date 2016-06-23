@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://nickrobison.com/dissertation/trestle.owl">
+    <Prefix name="" IRI="http://nickrobison.com/dissertation/trestle.owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -20,13 +21,22 @@
         <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TemporalFact"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#valid_to"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_valid_at"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Name"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Temporal_Fact"/>
+        <ObjectProperty IRI="#temporal_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valid_at"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Code"/>
@@ -38,28 +48,52 @@
         <DataProperty IRI="#Dataset_Properties"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Spatial_Fact"/>
+        <DataProperty IRI="#STR2_Year"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#STR2_Year"/>
+        <Class IRI="#Exists_Object"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#exists_to"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Valid_Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal_Object"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#ADM1_Name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#exists_at"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Status"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Point_Object"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Spatial_Concept"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_exists_at"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM1_Code"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Interval_Object"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#exists_from"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_temporal"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#DISP_Area"/>
@@ -77,19 +111,28 @@
         <Class IRI="#GAUL"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Burundi_Valid"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Burundi_Name"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#valid_from"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SpatialFact"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_fact"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM0_Code"/>
+        <DataProperty IRI="#GAUL_Properties"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#GAUL_Properties"/>
+        <DataProperty IRI="#ADM0_Code"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#EXP2_Year"/>
@@ -101,72 +144,102 @@
         <NamedIndividual IRI="#Burundi_0"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#Fact"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#valid_from"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataExactCardinality>
+        <Class IRI="#Exists_Object"/>
+        <Class IRI="#Temporal_Object"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fact"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty IRI="#valid_to"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataMaxCardinality>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_temporal"/>
+            <Class IRI="#Valid_Object"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GAUL"/>
         <Class IRI="#Dataset"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Interval_Object"/>
+        <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Point_Object"/>
+        <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialFact"/>
+        <Class IRI="#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Spatial_Concept"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_fact"/>
-            <Class IRI="#Fact"/>
+            <Class IRI="#SpatialFact"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Spatial_Concept"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty IRI="#exists_from"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataExactCardinality>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_temporal"/>
+            <Class IRI="#Exists_Object"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Spatial_Concept"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty IRI="#UUID"/>
-        </DataMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Spatial_Concept"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty IRI="#exists_to"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-        </DataMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Spatial_Fact"/>
+        <Class IRI="#TemporalFact"/>
         <Class IRI="#Fact"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Temporal_Fact"/>
-        <Class IRI="#Fact"/>
+        <Class IRI="#Valid_Object"/>
+        <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectUnionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#exists_at"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#valid_at"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+        </ObjectUnionOf>
+        <Class IRI="#Point_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectUnionOf>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#exists_from"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#valid_from"/>
+                <Datatype abbreviatedIRI="xsd:dateTime"/>
+            </DataSomeValuesFrom>
+        </ObjectUnionOf>
+        <Class IRI="#Interval_Object"/>
     </SubClassOf>
     <SubClassOf>
         <DataSomeValuesFrom>
             <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
             <Datatype IRI="http://www.opengis.net/ont/geosparql#wktLiteral"/>
         </DataSomeValuesFrom>
-        <Class IRI="#Spatial_Fact"/>
+        <Class IRI="#SpatialFact"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#Fact"/>
+        <Class IRI="#Exists_Object"/>
+        <Class IRI="#Valid_Object"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Interval_Object"/>
+        <Class IRI="#Point_Object"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SpatialFact"/>
         <Class IRI="#Spatial_Concept"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Spatial_Fact"/>
-        <Class IRI="#Temporal_Fact"/>
+        <Class IRI="#SpatialFact"/>
+        <Class IRI="#TemporalFact"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#GAUL"/>
@@ -175,17 +248,52 @@
     <ClassAssertion>
         <Class IRI="#GAUL"/>
         <NamedIndividual IRI="#Burundi_0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#Burundi_Name"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#test_exists_at"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#test_valid_at"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has_fact"/>
         <NamedIndividual IRI="#Brundi_Object"/>
         <NamedIndividual IRI="#Burundi_0"/>
     </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#exists_from"/>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
         <NamedIndividual IRI="#Brundi_Object"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
-    </DataPropertyAssertion>
+        <NamedIndividual IRI="#Burundi_Name"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_temporal"/>
+        <NamedIndividual IRI="#Brundi_Object"/>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_temporal"/>
+        <NamedIndividual IRI="#Burundi_0"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_temporal"/>
+        <NamedIndividual IRI="#Burundi_Name"/>
+        <NamedIndividual IRI="#test_valid_at"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#ADM0_Code"/>
         <NamedIndividual IRI="#Burundi_0"/>
@@ -197,24 +305,56 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Burundi</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#valid_from"/>
-        <NamedIndividual IRI="#Burundi_0"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#valid_to"/>
-        <NamedIndividual IRI="#Burundi_0"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-31T23:57:00</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
         <NamedIndividual IRI="#Burundi_0"/>
         <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (30 10)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM1_Name"/>
+        <NamedIndividual IRI="#Burundi_Name"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">TestName</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_from"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2013-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_to"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_at"/>
+        <NamedIndividual IRI="#test_exists_at"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_at"/>
+        <NamedIndividual IRI="#test_valid_at"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#fact_of"/>
         <ObjectProperty IRI="#has_fact"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_temporal"/>
+        <ObjectProperty IRI="#temporal_of"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_fact"/>
+        <Class IRI="#Spatial_Concept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_fact"/>
+        <Class IRI="#Fact"/>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#ADM0_Code"/>
         <DataProperty IRI="#GAUL_Properties"/>
@@ -260,11 +400,19 @@
         <DataProperty IRI="#GAUL_Properties"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty IRI="#exists_at"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#exists_from"/>
         <DataProperty IRI="#Temporal"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#exists_to"/>
+        <DataProperty IRI="#Temporal"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#valid_at"/>
         <DataProperty IRI="#Temporal"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
@@ -276,20 +424,28 @@
         <DataProperty IRI="#Temporal"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
+        <DataProperty IRI="#exists_at"/>
+        <Class IRI="#Exists_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#exists_from"/>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#Exists_Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#exists_to"/>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#Exists_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#valid_at"/>
+        <Class IRI="#Valid_Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#valid_from"/>
-        <Class IRI="#Fact"/>
+        <Class IRI="#Valid_Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#valid_to"/>
-        <Class IRI="#Fact"/>
+        <Class IRI="#Valid_Object"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#ADM0_Code"/>
