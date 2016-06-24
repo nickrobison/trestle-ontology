@@ -15,19 +15,14 @@
     <Import>http://www.opengis.net/ont/geosparql</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1 - Initial spatial concept approach</Literal>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2 - Concepts and facts are now logically consistent.
+0.1 - Initial spatial concept approach</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Dataset"/>
+        <NamedIndividual IRI="#test_muni2"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TemporalFact"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#valid_to"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#test_valid_at"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Name"/>
@@ -39,7 +34,73 @@
         <DataProperty IRI="#valid_at"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#test_maupto_exists"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#ADM2_Code"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temporal_Object"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#exists_at"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_muni3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interval_Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_aeroporto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Brundi_Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GAUL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_muni4"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM0_Code"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#GAUL_Properties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#EXP2_Year"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Burundi_0"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dataset"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#valid_to"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_maputo_valid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_valid_at"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_maputo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Temporal"/>
@@ -57,25 +118,19 @@
         <DataProperty IRI="#exists_to"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Burundi_Object_exists"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Valid_Object"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Temporal_Object"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM1_Name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#exists_at"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#Status"/>
+        <NamedIndividual IRI="#test_muni5"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Point_Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_muni1"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Spatial_Concept"/>
@@ -87,19 +142,13 @@
         <DataProperty IRI="#ADM1_Code"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Interval_Object"/>
+        <ObjectProperty IRI="#has_temporal"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#exists_from"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_temporal"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#DISP_Area"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Brundi_Object"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#fact_of"/>
@@ -108,10 +157,10 @@
         <DataProperty IRI="#UUID"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Burundi_Valid"/>
+        <DataProperty IRI="#valid_from"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
@@ -120,28 +169,13 @@
         <NamedIndividual IRI="#Burundi_Name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#valid_from"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SpatialFact"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_fact"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#GAUL_Properties"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ADM0_Code"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#EXP2_Year"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Fact"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Burundi_0"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Exists_Object"/>
@@ -262,8 +296,52 @@
         <NamedIndividual IRI="#Burundi_Valid"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_aeroporto"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Temporal_Object"/>
         <NamedIndividual IRI="#test_exists_at"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_maputo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#test_maputo_valid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#test_maupto_exists"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_muni1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_muni2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_muni3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_muni4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL"/>
+        <NamedIndividual IRI="#test_muni5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Spatial_Concept"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Temporal_Object"/>
@@ -293,6 +371,81 @@
         <ObjectProperty IRI="#has_temporal"/>
         <NamedIndividual IRI="#Burundi_Name"/>
         <NamedIndividual IRI="#test_valid_at"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_maputo_valid"/>
+        <NamedIndividual IRI="#test_maputo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_maupto_exists"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_aeroporto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_muni1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_muni2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_muni3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_muni4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#temporal_of"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <NamedIndividual IRI="#test_muni5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_aeroporto"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_maputo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_muni1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_muni2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_muni3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_muni4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_fact"/>
+        <NamedIndividual IRI="#test_spatial_maputo_object"/>
+        <NamedIndividual IRI="#test_muni5"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#ADM0_Code"/>
@@ -330,14 +483,109 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-31T23:57:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_aeroporto"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65253</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_aeroporto"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">MULTIPOLYGON(((32.5968208310001 -25.881235123,32.5968208310001 -25.881235123,32.594978333 -25.88051796,32.5949592590001 -25.8805103299999,32.594516754 -25.8815135959999,32.5939331050001 -25.88133812,32.5936660770001 -25.8836479189999,32.593654633 -25.88406 (...)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#exists_at"/>
         <NamedIndividual IRI="#test_exists_at"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#valid_at"/>
-        <NamedIndividual IRI="#test_valid_at"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-11-31T23:57:00</Literal>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_maputo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">41374</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_maputo"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.9915311 -25.9701193999999,32.9915311 -25.9701193999999,32.991072 -25.9700989999999,32.9906564 -25.9705549999999,32.9902575 -25.9708717,32.9898579000001 -25.9710339,32.989654 -25.9714537,32.989245 -25.9716698999999,32.9884745000001 -25.971 (...)&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_from"/>
+        <NamedIndividual IRI="#test_maputo_valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_to"/>
+        <NamedIndividual IRI="#test_maputo_valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#test_maupto_exists"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#test_maupto_exists"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_muni1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65254</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_muni1"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.9915311 -25.9701193999999,32.9915311 -25.9701193999999,32.991072 -25.9700989999999,32.9906564 -25.9705549999999,32.9902575 -25.9708717,32.9898579000001 -25.9710339,32.989654 -25.9714537,32.989245 -25.9716698999999,32.9884745000001 -25.971 (...)&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_from"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#valid_to"/>
+        <NamedIndividual IRI="#test_muni1_valid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_muni2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65255</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_muni2"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.5612678530001 -25.9292106629999,32.5612678530001 -25.9292106629999,32.561210632 -25.9290828699999,32.5611877440001 -25.9289665219999,32.5611267090001 -25.928804398,32.5610923770001 -25.928688049,32.5610466000001 -25.928512573,32.56098938  (...)&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_muni3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65256</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_muni3"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.63111559 -25.932981942,32.63111559 -25.932981942,32.630470276 -25.932149887,32.6304245000001 -25.932041168,32.6295547490001 -25.931119919,32.6293792720001 -25.931091309,32.629104614 -25.93106842,32.6289863590001 -25.9310226439999,32.62883 (...)&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_muni4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65257</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_muni4"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.6928535000001 -25.9191817,32.6928535000001 -25.9191817,32.6931536000001 -25.9182683999999,32.6935824 -25.9173544,32.6938025750001 -25.916874642,32.6939869 -25.9164729999999,32.6942395 -25.9155251,32.6944992000001 -25.914549,32.694824 -25. (...)&quot;</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM2_Code"/>
+        <NamedIndividual IRI="#test_muni5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65258</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#test_muni5"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">&quot;MULTIPOLYGON(((32.6245498660001 -25.828437805,32.6245498660001 -25.828437805,32.5846786500001 -25.815191269,32.5729141240001 -25.811281204,32.5690002440001 -25.810024261,32.567531586 -25.81533432,32.5656623840001 -25.835645676,32.562896729 -25.854330063,32 (...)&quot;</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#fact_of"/>
