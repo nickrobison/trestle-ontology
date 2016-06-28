@@ -22,9 +22,6 @@
         <NamedIndividual IRI="#test_muni2"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TemporalFact"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#ADM2_Name"/>
     </Declaration>
     <Declaration>
@@ -142,6 +139,9 @@
         <DataProperty IRI="#ADM1_Code"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#AttributeFact"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_temporal"/>
     </Declaration>
     <Declaration>
@@ -177,6 +177,10 @@
     <Declaration>
         <Class IRI="#Fact"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#AttributeFact"/>
+        <Class IRI="#Fact"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Exists_Object"/>
         <Class IRI="#Temporal_Object"/>
@@ -219,10 +223,6 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TemporalFact"/>
-        <Class IRI="#Fact"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Valid_Object"/>
         <Class IRI="#Temporal_Object"/>
     </SubClassOf>
@@ -260,6 +260,10 @@
         <Class IRI="#SpatialFact"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#AttributeFact"/>
+        <Class IRI="#SpatialFact"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Exists_Object"/>
         <Class IRI="#Valid_Object"/>
     </DisjointClasses>
@@ -270,10 +274,6 @@
     <DisjointClasses>
         <Class IRI="#SpatialFact"/>
         <Class IRI="#Spatial_Concept"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#SpatialFact"/>
-        <Class IRI="#TemporalFact"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#GAUL"/>

@@ -2,6 +2,6 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql" uri="http://www.opengis.net/ont/geosparql#"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1466833225392" name="http://nickrobison.com/dissertation/trestle.owl" uri="trestle.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1467082765207" name="http://nickrobison.com/dissertation/trestle.owl" uri="trestle.owl"/>
     </group>
 </catalog>
