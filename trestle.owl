@@ -15,7 +15,8 @@
     <Import>http://www.opengis.net/ont/geosparql</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2 - Concepts and facts are now logically consistent.
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3 - Renamed to TS_Concept
+0.2 - Concepts and facts are now logically consistent.
 0.1 - Initial spatial concept approach</Literal>
     </Annotation>
     <Declaration>
@@ -82,6 +83,9 @@
         <NamedIndividual IRI="#Burundi_0"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TS_Concept"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
@@ -128,9 +132,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_muni1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Spatial_Concept"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_exists_at"/>
@@ -209,14 +210,14 @@
         <Class IRI="#Fact"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#TS_Concept"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_fact"/>
             <Class IRI="#SpatialFact"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#TS_Concept"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_temporal"/>
             <Class IRI="#Exists_Object"/>
@@ -273,7 +274,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#SpatialFact"/>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#TS_Concept"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#GAUL"/>
@@ -340,7 +341,7 @@
         <NamedIndividual IRI="#test_muni5"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#TS_Concept"/>
         <NamedIndividual IRI="#test_spatial_maputo_object"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -597,7 +598,7 @@
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_fact"/>
-        <Class IRI="#Spatial_Concept"/>
+        <Class IRI="#TS_Concept"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#has_fact"/>
