@@ -145,6 +145,9 @@
         <Class IRI="#Point_Object"/>
     </Declaration>
     <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#muni1_muni2"/>
     </Declaration>
     <Declaration>
@@ -204,9 +207,6 @@
     <Declaration>
         <ObjectProperty IRI="#relation_of"/>
     </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
-    </Declaration>
     <SubClassOf>
         <Class IRI="#AttributeFact"/>
         <Class IRI="#Fact"/>
@@ -255,13 +255,6 @@
     <SubClassOf>
         <Class IRI="#Valid_Object"/>
         <Class IRI="#Temporal_Object"/>
-    </SubClassOf>
-    <SubClassOf>
-        <DataSomeValuesFrom>
-            <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
-            <Datatype IRI="http://www.opengis.net/ont/geosparql#wktLiteral"/>
-        </DataSomeValuesFrom>
-        <Class IRI="#SpatialFact"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#AttributeFact"/>
@@ -810,6 +803,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#valid_to"/>
         <Class IRI="#Valid_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#hasSerialization"/>
+        <Class IRI="#SpatialFact"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#ADM0_Code"/>
