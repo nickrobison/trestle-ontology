@@ -58,7 +58,13 @@
         <DataProperty IRI="#Status"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GAUL_Raster"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#test_muni3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VectorFact"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#muni3_muni4"/>
@@ -76,13 +82,16 @@
         <Class IRI="#GAUL"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#RasterFact"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM0_Code"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#GAUL_Properties"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_muni4"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ADM0_Code"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#EXP2_Year"/>
@@ -97,13 +106,16 @@
         <Class IRI="#TS_Concept"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#maputo_raster"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concept_Relation"/>
+        <DataProperty IRI="#valid_to"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#valid_to"/>
+        <Class IRI="#Concept_Relation"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_maputo_valid"/>
@@ -142,10 +154,10 @@
         <NamedIndividual IRI="#test_muni5"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Point_Object"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
+        <Class IRI="#Point_Object"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#muni1_muni2"/>
@@ -172,6 +184,9 @@
         <ObjectProperty IRI="#has_temporal"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#rasterPointer"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#DISP_Area"/>
     </Declaration>
     <Declaration>
@@ -181,22 +196,22 @@
         <DataProperty IRI="#UUID"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Relation_Strength"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SpatialFact"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Burundi_Name"/>
+        <DataProperty IRI="#Relation_Strength"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SpatialFact"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#valid_from"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Burundi_Name"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_fact"/>
@@ -227,12 +242,20 @@
         <Class IRI="#Dataset"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#GAUL_Raster"/>
+        <Class IRI="#Dataset"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Interval_Object"/>
         <Class IRI="#Temporal_Object"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Point_Object"/>
         <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RasterFact"/>
+        <Class IRI="#SpatialFact"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpatialFact"/>
@@ -242,7 +265,7 @@
         <Class IRI="#TS_Concept"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_fact"/>
-            <Class IRI="#SpatialFact"/>
+            <Class IRI="#VectorFact"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -255,6 +278,10 @@
     <SubClassOf>
         <Class IRI="#Valid_Object"/>
         <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VectorFact"/>
+        <Class IRI="#SpatialFact"/>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#AttributeFact"/>
@@ -269,9 +296,14 @@
         <Class IRI="#Point_Object"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#SpatialFact"/>
         <Class IRI="#TS_Concept"/>
+        <Class IRI="#VectorFact"/>
     </DisjointClasses>
+    <DisjointUnion>
+        <Class IRI="#SpatialFact"/>
+        <Class IRI="#RasterFact"/>
+        <Class IRI="#VectorFact"/>
+    </DisjointUnion>
     <ClassAssertion>
         <Class IRI="#GAUL"/>
         <NamedIndividual IRI="#Brundi_Object"/>
@@ -291,6 +323,10 @@
     <ClassAssertion>
         <Class IRI="#Temporal_Object"/>
         <NamedIndividual IRI="#Burundi_Valid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GAUL_Raster"/>
+        <NamedIndividual IRI="#maputo_raster"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Concept_Relation"/>
@@ -529,6 +565,21 @@
         <DataProperty IRI="#valid_to"/>
         <NamedIndividual IRI="#Burundi_Valid"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-11-30T23:57:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ADM0_Code"/>
+        <NamedIndividual IRI="#maputo_raster"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1234</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#rasterPointer"/>
+        <NamedIndividual IRI="#maputo_raster"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">test-pointer</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <NamedIndividual IRI="#maputo_raster"/>
+        <Literal datatypeIRI="http://www.opengis.net/ont/geosparql#wktLiteral">MULTIPOLYGON(((32.5096456000001 -25.967816,32.4560050960001 -26.091545105,32.6053314210001 -26.0416069029999,32.5096456000001 -25.967816)),((32.695365661 -25.878672222,32.5690002440001 -25.810024261,32.501568514 -25.959611663,32.695365661 -25.878672222)))</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Relation_Strength"/>
@@ -779,6 +830,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#exists_to"/>
         <Class IRI="#Interval_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#rasterPointer"/>
+        <Class IRI="#RasterFact"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#valid_at"/>
