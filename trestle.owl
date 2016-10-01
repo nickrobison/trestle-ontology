@@ -40,10 +40,10 @@
         <DataProperty IRI="#valid_at"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Maputo_Split"/>
+        <NamedIndividual IRI="#test_maupto_exists"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#test_maupto_exists"/>
+        <NamedIndividual IRI="#Maputo_Split"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Code"/>
@@ -67,10 +67,10 @@
         <Class IRI="#GAUL_Raster"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#test_muni3"/>
+        <Class IRI="#VectorFact"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#VectorFact"/>
+        <NamedIndividual IRI="#test_muni3"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_temporal_object"/>
@@ -97,16 +97,16 @@
         <Class IRI="#RasterFact"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#test_muni4"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ADM0_Code"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#valid_time_of"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#GAUL_Properties"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_muni4"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ADM0_Code"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#EXP2_Year"/>
@@ -127,10 +127,10 @@
         <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concept_Relation"/>
+        <DataProperty IRI="#valid_to"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#valid_to"/>
+        <Class IRI="#Concept_Relation"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_maputo_valid"/>
@@ -139,10 +139,10 @@
         <NamedIndividual IRI="#test_valid_at"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#test_maputo"/>
+        <NamedIndividual IRI="#maputo_split_adm2_name_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_split_adm2_name_1"/>
+        <NamedIndividual IRI="#test_maputo"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_spatial_maputo_object"/>
@@ -178,13 +178,13 @@
         <NamedIndividual IRI="#test_muni5"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Point_Object"/>
-    </Declaration>
-    <Declaration>
         <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#muni1_muni2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Point_Object"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GAUL_Split"/>
@@ -193,10 +193,10 @@
         <NamedIndividual IRI="#test_muni1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_split_bounding_box_temporal_1"/>
+        <NamedIndividual IRI="#maputo_split_adm2_code_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_split_adm2_code_1"/>
+        <NamedIndividual IRI="#maputo_split_bounding_box_temporal_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_exists_at"/>
@@ -211,16 +211,16 @@
         <Class IRI="#AttributeFact"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#exists_from"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#has_temporal"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#DISP_Area"/>
+        <DataProperty IRI="#exists_from"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#rasterPointer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DISP_Area"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#UUID"/>
@@ -229,16 +229,10 @@
         <ObjectProperty IRI="#fact_of"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Burundi_Valid"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#Relation_Strength"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SpatialFact"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ADM0_Name"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#valid_from"/>
@@ -250,16 +244,22 @@
         <NamedIndividual IRI="#Burundi_Name"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#ADM0_Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialFact"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_fact"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_bounding_box_1"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Fact"/>
+        <ObjectProperty IRI="#relation_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relation_of"/>
+        <Class IRI="#Fact"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#AttributeFact"/>
@@ -756,7 +756,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#valid_to"/>
         <NamedIndividual IRI="#test_maputo_valid"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01T00:00:00</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01T00:00:00Z</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#exists_from"/>
@@ -1077,14 +1077,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#Status"/>
         <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#Temporal"/>
-        <DataUnionOf>
-            <Datatype abbreviatedIRI="xsd:date"/>
-            <Datatype abbreviatedIRI="xsd:dateTime"/>
-            <Datatype abbreviatedIRI="xsd:dateTimeStamp"/>
-        </DataUnionOf>
     </DataPropertyRange>
     <DisjointDataProperties>
         <DataProperty IRI="#exists_at"/>
