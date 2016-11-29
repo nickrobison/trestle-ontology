@@ -97,9 +97,6 @@
         <Class IRI="#Facet"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#GAUL"/>
     </Declaration>
     <Declaration>
@@ -130,16 +127,16 @@
         <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#valid_to"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Concept_Relation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#facet_of"/>
+        <DataProperty IRI="#valid_to"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_maputo_valid"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#facet_of"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#test_valid_at"/>
@@ -226,10 +223,10 @@
         <DataProperty IRI="#exists_from"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#rasterPointer"/>
+        <DataProperty IRI="#DISP_Area"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#DISP_Area"/>
+        <DataProperty IRI="#rasterPointer"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#UUID"/>
@@ -244,6 +241,9 @@
         <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#SpatialFact"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#valid_from"/>
     </Declaration>
     <Declaration>
@@ -251,9 +251,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SpatialFact"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_fact"/>
@@ -311,6 +308,13 @@
     <SubClassOf>
         <Class IRI="#RasterFact"/>
         <Class IRI="#SpatialFact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RasterFact"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#rasterPointer"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SpatialFact"/>
@@ -641,14 +645,6 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#database_time"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#database_time_of"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#facet_of"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -659,22 +655,6 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#has_fact"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_temporal"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#temporal_of"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#valid_time"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#valid_time_of"/>
-        <ObjectProperty IRI="#Temporal_Property"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#aspect_of"/>
