@@ -58,6 +58,9 @@
         <Class IRI="#Database_Object"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Relation"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Temporal_Object"/>
     </Declaration>
     <Declaration>
@@ -68,6 +71,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#VectorFact"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatedTo"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_temporal_object"/>
@@ -118,16 +124,19 @@
         <DataProperty IRI="#EXP2_Year"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#Temporal_Relation"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#test_muni1_valid"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TS_Concept"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Dataset"/>
+        <Class IRI="#Temporal_Relation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concept_Relation"/>
+        <Class IRI="#Dataset"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#valid_to"/>
@@ -152,9 +161,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_object_temporal"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#Temporal"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Dataset_Properties"/>
@@ -196,9 +202,6 @@
         <Class IRI="#Point_Object"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#contains_relation"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#maputo_split_adm2_code_1"/>
     </Declaration>
     <Declaration>
@@ -208,10 +211,16 @@
         <NamedIndividual IRI="#test_exists_at"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Spatial_Relation"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#ADM1_Code"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_relation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Semantic_Relation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AttributeFact"/>
@@ -283,14 +292,14 @@
         <Class IRI="#Fact"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#database_time"/>
-            <Class IRI="#Concept_Relation"/>
+            <Class IRI="#Relation"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Fact"/>
         <ObjectExactCardinality cardinality="1">
             <ObjectProperty IRI="#valid_time"/>
-            <Class IRI="#Concept_Relation"/>
+            <Class IRI="#Relation"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
@@ -317,8 +326,16 @@
         </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Semantic_Relation"/>
+        <Class IRI="#Relation"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SpatialFact"/>
         <Class IRI="#Fact"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spatial_Relation"/>
+        <Class IRI="#Relation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TS_Object"/>
@@ -333,6 +350,10 @@
             <ObjectProperty IRI="#has_temporal"/>
             <Class IRI="#Exists_Object"/>
         </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temporal_Relation"/>
+        <Class IRI="#Relation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Valid_Object"/>
@@ -373,6 +394,10 @@
         <NamedIndividual IRI="#Burundi_Valid"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Temporal_Relation"/>
+        <NamedIndividual IRI="#maputo_aero_relation"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Temporal_Object"/>
         <NamedIndividual IRI="#test_exists_at"/>
     </ClassAssertion>
@@ -401,7 +426,7 @@
         <NamedIndividual IRI="#maputo:2013:3000"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#contains_relation"/>
+        <ObjectProperty IRI="#has_relation"/>
         <NamedIndividual IRI="#Cidade_de_maputo_concept"/>
         <NamedIndividual IRI="#maputo_aero_relation"/>
     </ObjectPropertyAssertion>
@@ -426,12 +451,12 @@
         <NamedIndividual IRI="#aero_split_disp_1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_relation"/>
+        <ObjectProperty IRI="#relatedTo"/>
         <NamedIndividual IRI="#maputo_aero_relation"/>
         <NamedIndividual IRI="#aeroporto:1990:2013"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_relation"/>
+        <ObjectProperty IRI="#relatedTo"/>
         <NamedIndividual IRI="#maputo_aero_relation"/>
         <NamedIndividual IRI="#maputo:2013:3000"/>
     </ObjectPropertyAssertion>
@@ -656,6 +681,10 @@
         <ObjectProperty IRI="#has_fact"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#relatedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#aspect_of"/>
         <ObjectProperty IRI="#has_aspect"/>
@@ -685,10 +714,6 @@
         <ObjectProperty IRI="#valid_time_of"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#contains_relation"/>
-        <Class IRI="#TS_Concept"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#facet_of"/>
         <Class IRI="#Facet"/>
     </ObjectPropertyDomain>
@@ -701,13 +726,17 @@
         <Class IRI="#TS_Object"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_relation"/>
+        <Class IRI="#TS_Concept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatedTo"/>
+        <Class IRI="#Relation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#valid_time"/>
         <Class IRI="#Fact"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#contains_relation"/>
-        <Class IRI="#Concept_Relation"/>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#facet_of"/>
         <Class IRI="#Dataset"/>
@@ -717,8 +746,16 @@
         <Class IRI="#Fact"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_relation"/>
+        <Class IRI="#Relation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_temporal"/>
         <Class IRI="#Temporal_Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatedTo"/>
+        <Class IRI="#TS_Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#valid_time"/>
@@ -770,43 +807,43 @@
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#database_at"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#database_from"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#database_to"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#exists_at"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#exists_from"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#exists_to"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#valid_at"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#valid_from"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#valid_to"/>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
         <DataProperty IRI="#Relation_Strength"/>
-        <Class IRI="#Concept_Relation"/>
+        <Class IRI="#Relation"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#database_at"/>
@@ -933,7 +970,7 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#Temporal"/>
+        <DataProperty IRI="#Temporal_Relation"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DisjointDataProperties>
@@ -1006,6 +1043,16 @@ The database temporal defines for what time that fact is correct in the database
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Semantic_Relation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a relationship between a TS_Object and a TS_Concept, based on a semantic relationship. E.g. datasets for a statistical model.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Spatial_Relation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a relationship between a TS_Object and a TS_Concept, based on a spatial primitive.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Status</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Status of the country</Literal>
     </AnnotationAssertion>
@@ -1020,6 +1067,11 @@ Right now, concepts don&apos;t exist, they just are, the individual objects exis
         <IRI>#TS_Object</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Base component of the Trestle ontology.
 Defines an object that contains a number of different facts with distinct validity components.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Temporal_Relation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a relationship between a TS_Object and a TS_Concept, based on a temporal primitive.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
