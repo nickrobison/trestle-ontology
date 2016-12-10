@@ -100,9 +100,6 @@
         <ObjectProperty IRI="#has_aspect"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Facet"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#GAUL"/>
     </Declaration>
     <Declaration>
@@ -130,9 +127,6 @@
         <NamedIndividual IRI="#test_muni1_valid"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TS_Concept"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Temporal_Relation"/>
     </Declaration>
     <Declaration>
@@ -152,9 +146,6 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_adm2_name_1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TS_Object"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#aero_split_adm2_name_1"/>
@@ -191,6 +182,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM1_Name"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trestle_Object"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_database_temporal"/>
@@ -232,13 +226,16 @@
         <DataProperty IRI="#exists_from"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#DISP_Area"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#rasterPointer"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#DISP_Area"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#UUID"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trestle_Concept"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#fact_of"/>
@@ -250,13 +247,13 @@
         <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SpatialFact"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#valid_from"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_disp_area_1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialFact"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
@@ -338,22 +335,22 @@
         <Class IRI="#Relation"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TS_Object"/>
+        <Class IRI="#Temporal_Relation"/>
+        <Class IRI="#Relation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trestle_Object"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_fact"/>
             <Class IRI="#Fact"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TS_Object"/>
+        <Class IRI="#Trestle_Object"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#has_temporal"/>
             <Class IRI="#Exists_Object"/>
         </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Temporal_Relation"/>
-        <Class IRI="#Relation"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Valid_Object"/>
@@ -714,20 +711,12 @@
         <ObjectProperty IRI="#valid_time_of"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#facet_of"/>
-        <Class IRI="#Facet"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has_aspect"/>
-        <Class IRI="#Facet"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_fact"/>
-        <Class IRI="#TS_Object"/>
+        <Class IRI="#Trestle_Object"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_relation"/>
-        <Class IRI="#TS_Concept"/>
+        <Class IRI="#Trestle_Concept"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#relatedTo"/>
@@ -755,7 +744,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#relatedTo"/>
-        <Class IRI="#TS_Object"/>
+        <Class IRI="#Trestle_Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#valid_time"/>
@@ -1020,11 +1009,6 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Facet</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a collected set of facts for a given TS_Object, think of it as a view into an object from a specific angle.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Fact</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Attribute class of a TS_Object.
 Each attribute has a valid temporal and a database temporal
@@ -1058,20 +1042,20 @@ The database temporal defines for what time that fact is correct in the database
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TS_Concept</IRI>
+        <IRI>#Temporal_Relation</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a relationship between a TS_Object and a TS_Concept, based on a temporal primitive.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Trestle_Concept</IRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Higher level semantic concepts that provides a way to link related objects.
 Right now, concepts don&apos;t exist, they just are, the individual objects exist along with all of their related facts.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TS_Object</IRI>
+        <IRI>#Trestle_Object</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Base component of the Trestle ontology.
 Defines an object that contains a number of different facts with distinct validity components.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Temporal_Relation</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Defines a relationship between a TS_Object and a TS_Concept, based on a temporal primitive.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
