@@ -984,7 +984,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#concept_of"/>
-        <ObjectProperty IRI="#concept_of"/>
+        <ObjectProperty IRI="#has_concept"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#contains"/>
