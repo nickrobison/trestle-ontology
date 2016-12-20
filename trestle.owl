@@ -912,7 +912,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#begins"/>
-        <ObjectProperty IRI="#Temporal_Relation"/>
+        <ObjectProperty IRI="#before"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#contains"/>
@@ -936,7 +936,7 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#ends"/>
-        <ObjectProperty IRI="#Temporal_Relation"/>
+        <ObjectProperty IRI="#after"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#equal"/>
