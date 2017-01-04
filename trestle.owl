@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://nickrobison.com/dissertation/trestle.owl"
-     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.4">
+     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.9">
     <Prefix name="" IRI="http://nickrobison.com/dissertation/trestle.owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -16,7 +16,8 @@
     <Import>http://www.opengis.net/ont/geosparql</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.4 - Added Concept_Relation and relevant axioms.
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.9 - Major refactor of entity relationships. Serious breaking changes.
+0.4 - Added Concept_Relation and relevant axioms.
 0.3 - Renamed to TS_Concept
 0.2 - Concepts and facts are now logically consistent.
 0.1 - Initial spatial concept approach</Literal>
@@ -34,10 +35,10 @@
         <ObjectProperty IRI="#temporal_of"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM2_Code"/>
+        <Class IRI="#Trestle_Overlap"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Trestle_Overlap"/>
+        <DataProperty IRI="#ADM2_Code"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#overlaps:1980:1995"/>
@@ -64,22 +65,22 @@
         <ObjectProperty IRI="#has_overlap"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#during"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Interval_Object"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Cidade_de_maputo_concept"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#during"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Spatial_Overlap"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#overlap_of"/>
+        <NamedIndividual IRI="#municipal1:1990:2013"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#municipal1:1990:2013"/>
+        <ObjectProperty IRI="#overlap_of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#overlaps"/>
@@ -172,19 +173,19 @@
         <ObjectProperty IRI="#covered_by"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#DISP_Area"/>
+        <DataProperty IRI="#rasterPointer"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#rasterPointer"/>
+        <DataProperty IRI="#DISP_Area"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Trestle_Concept"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Relation_Strength"/>
+        <NamedIndividual IRI="#Burundi_Valid"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Burundi_Valid"/>
+        <DataProperty IRI="#Relation_Strength"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SpatialFact"/>
@@ -214,28 +215,28 @@
         <NamedIndividual IRI="#municipal_1_disp_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <ObjectProperty IRI="#aspect_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#aspect_of"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Name"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#aero_split_disp_1"/>
+        <NamedIndividual IRI="#earlyTime:1900:1989"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#earlyTime:1900:1989"/>
+        <NamedIndividual IRI="#aero_split_disp_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#municipal_1_adm2_code_1"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#start_temporal"/>
+        <NamedIndividual IRI="#municipal2:1990:2013"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#municipal2:1990:2013"/>
+        <DataProperty IRI="#start_temporal"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#valid_at"/>
@@ -277,10 +278,10 @@
         <NamedIndividual IRI="#test_overlap"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#municipal_1_adm2_name_1"/>
+        <NamedIndividual IRI="#aero_split_adm2_code_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#aero_split_adm2_code_1"/>
+        <NamedIndividual IRI="#municipal_1_adm2_name_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#aero_split_bounding_box_1"/>
@@ -343,10 +344,10 @@
         <Class IRI="#Valid_Object"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM1_Name"/>
+        <NamedIndividual IRI="#maputo_aero_relation"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_aero_relation"/>
+        <DataProperty IRI="#ADM1_Name"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Trestle_Object"/>
