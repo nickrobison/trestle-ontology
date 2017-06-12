@@ -149,10 +149,10 @@
         <ObjectProperty IRI="#covered_by"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#rasterPointer"/>
+        <DataProperty IRI="#DISP_Area"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#DISP_Area"/>
+        <DataProperty IRI="#rasterPointer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Trestle_Concept"/>
@@ -335,10 +335,10 @@
         <ObjectProperty IRI="#has_relation"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#inside"/>
+        <DataProperty IRI="#exists_from"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#exists_from"/>
+        <ObjectProperty IRI="#inside"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#equal"/>
@@ -883,6 +883,71 @@
         <DataProperty IRI="#valid_at"/>
         <NamedIndividual IRI="#test_valid_at"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-02T12:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#begin:1980:1990"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1989-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#begin:1980:1990"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#earlyTime:1900:1989"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#earlyTime:1900:1989"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1988-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#maputo:2013:3000"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#municipal1:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#municipal1:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#municipal2:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#municipal2:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_from"/>
+        <NamedIndividual IRI="#overlaps:1980:1995"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1980-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#exists_to"/>
+        <NamedIndividual IRI="#overlaps:1980:1995"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1984-12-31T00:00:00</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#after"/>
