@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://nickrobison.com/dissertation/trestle.owl"
-     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.9">
+     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.9.1">
     <Prefix name="" IRI="http://nickrobison.com/dissertation/trestle.owl"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -16,7 +16,8 @@
     <Import>http://www.opengis.net/ont/geosparql</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.9 - Major refactor of entity relationships. Serious breaking changes.
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.9.1 - Fixed reasoner inconsistency issues.
+0.9 - Major refactor of entity relationships. Serious breaking changes.
 0.4 - Added Concept_Relation and relevant axioms.
 0.3 - Renamed to TS_Concept
 0.2 - Concepts and facts are now logically consistent.
@@ -885,6 +886,16 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-02T12:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#database_from"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#database_to"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#exists_from"/>
         <NamedIndividual IRI="#aeroporto:1990:2013"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-01-01T00:00:00</Literal>
@@ -895,6 +906,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-12-31T00:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#database_from"/>
+        <NamedIndividual IRI="#begin:1980:1990"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-01T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#exists_from"/>
         <NamedIndividual IRI="#begin:1980:1990"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1989-01-01T00:00:00</Literal>
@@ -903,6 +919,11 @@
         <DataProperty IRI="#exists_to"/>
         <NamedIndividual IRI="#begin:1980:1990"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1990-12-31T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#database_from"/>
+        <NamedIndividual IRI="#earlyTime:1900:1989"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-01-01T00:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#exists_from"/>
@@ -1472,19 +1493,12 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DisjointDataProperties>
-        <DataProperty IRI="#database_at"/>
         <DataProperty IRI="#exists_at"/>
         <DataProperty IRI="#valid_at"/>
     </DisjointDataProperties>
     <DisjointDataProperties>
-        <DataProperty IRI="#database_from"/>
         <DataProperty IRI="#exists_from"/>
         <DataProperty IRI="#valid_from"/>
-    </DisjointDataProperties>
-    <DisjointDataProperties>
-        <DataProperty IRI="#database_to"/>
-        <DataProperty IRI="#exists_to"/>
-        <DataProperty IRI="#valid_to"/>
     </DisjointDataProperties>
     <DisjointDataProperties>
         <DataProperty IRI="#exists_to"/>
