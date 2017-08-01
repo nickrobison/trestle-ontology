@@ -46,13 +46,22 @@
         <ObjectProperty IRI="#covers"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#modified"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Burundi_Object_exists"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Temporal_Object"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#becomes"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mergedFrom"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VectorFact"/>
@@ -130,10 +139,16 @@
         <DataProperty IRI="#database_at"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#split"/>
+    </Declaration>
+    <Declaration>
         <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Point_Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#created"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo_split_adm2_code_1"/>
@@ -223,6 +238,9 @@
         <NamedIndividual IRI="#test_maupto_exists"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Trestle_Event"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#database_to"/>
     </Declaration>
     <Declaration>
@@ -230,6 +248,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Database_Object"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#splitFrom"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#contains"/>
@@ -304,6 +325,12 @@
         <NamedIndividual IRI="#municipal_1_bounding_box_1"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#merged"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#destroyed"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#STR2_Year"/>
     </Declaration>
     <Declaration>
@@ -359,6 +386,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM0_Name"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Event_Relation"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#AttributeFact"/>
@@ -980,6 +1010,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#becomes"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#before"/>
         <ObjectProperty IRI="#Temporal_Relation"/>
     </SubObjectPropertyOf>
@@ -998,6 +1032,14 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#covers"/>
         <ObjectProperty IRI="#Spatial_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#created"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#destroyed"/>
+        <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#disjoint"/>
@@ -1036,8 +1078,28 @@
         <ObjectProperty IRI="#Spatial_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#merged"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#mergedFrom"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#modified"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#spatial_overlaps"/>
         <ObjectProperty IRI="#Spatial_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#split"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#splitFrom"/>
+        <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#temporal_overlaps"/>
@@ -1084,8 +1146,16 @@
         <ObjectProperty IRI="#relation_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#merged"/>
+        <ObjectProperty IRI="#mergedFrom"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#related_by"/>
         <ObjectProperty IRI="#related_to"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#split"/>
+        <ObjectProperty IRI="#splitFrom"/>
     </InverseObjectProperties>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#disjoint"/>
@@ -1130,6 +1200,10 @@
         <ObjectProperty IRI="#inside"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Event_Relation"/>
+        <Class IRI="#Trestle_Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#Temporal_Relation"/>
         <Class IRI="#Trestle_Object"/>
     </ObjectPropertyDomain>
@@ -1161,6 +1235,10 @@
         <ObjectProperty IRI="#relation_of"/>
         <Class IRI="#Trestle_Relation"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Event_Relation"/>
+        <Class IRI="#Trestle_Object"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Temporal_Relation"/>
         <Class IRI="#Trestle_Object"/>
@@ -1383,11 +1461,11 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#exists_at"/>
-        <Class IRI="#Exists_Object"/>
+        <Class IRI="#Point_Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#exists_at"/>
-        <Class IRI="#Point_Object"/>
+        <Class IRI="#Trestle_Event"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#exists_from"/>
