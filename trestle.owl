@@ -1587,6 +1587,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#exists_at"/>
+        <Class IRI="#Exists_Object"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#exists_at"/>
         <Class IRI="#Point_Object"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
