@@ -25,6 +25,9 @@
 0.1 - Initial spatial concept approach</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Created_Event"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#meets"/>
     </Declaration>
     <Declaration>
@@ -97,6 +100,9 @@
         <ObjectProperty IRI="#overlap_of"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Split_Event"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#overlaps"/>
     </Declaration>
     <Declaration>
@@ -140,6 +146,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Dataset_Properties"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Destroyed_Event"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#exists_to"/>
@@ -214,6 +223,9 @@
         <Class IRI="#Fact"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Becomes_Event"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#TOverlap"/>
     </Declaration>
     <Declaration>
@@ -254,6 +266,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Trestle_Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Merged_Event"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#database_to"/>
@@ -413,8 +428,20 @@
         <Class IRI="#Fact"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Becomes_Event"/>
+        <Class IRI="#Trestle_Event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Created_Event"/>
+        <Class IRI="#Trestle_Event"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Database_Object"/>
         <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Destroyed_Event"/>
+        <Class IRI="#Trestle_Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Exists_Object"/>
@@ -427,6 +454,10 @@
     <SubClassOf>
         <Class IRI="#Interval_Object"/>
         <Class IRI="#Temporal_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Merged_Event"/>
+        <Class IRI="#Trestle_Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Point_Object"/>
@@ -450,6 +481,10 @@
     <SubClassOf>
         <Class IRI="#Spatial_Overlap"/>
         <Class IRI="#Trestle_Overlap"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Split_Event"/>
+        <Class IRI="#Trestle_Event"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Temporal_Overlap"/>
@@ -1304,12 +1339,24 @@
         <Class IRI="#Trestle_Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#becomes"/>
+        <Class IRI="#Becomes_Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#component_of"/>
         <Class IRI="#SpatialUnion"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#concept_of"/>
         <Class IRI="#Trestle_Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#created"/>
+        <Class IRI="#Created_Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#destroyed"/>
+        <Class IRI="#Destroyed_Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#facet_of"/>
@@ -1328,6 +1375,10 @@
         <Class IRI="#Trestle_Relation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#merged"/>
+        <Class IRI="#Merged_Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#overlap_of"/>
         <Class IRI="#Trestle_Object"/>
     </ObjectPropertyRange>
@@ -1338,6 +1389,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#relation_of"/>
         <Class IRI="#Trestle_Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#split"/>
+        <Class IRI="#Split_Event"/>
     </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
