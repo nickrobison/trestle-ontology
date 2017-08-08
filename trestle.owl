@@ -43,22 +43,22 @@
         <DataProperty IRI="#ADM2_Code"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#became"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#overlaps:1980:1995"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#covers"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Burundi_Object_exists"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#modified"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Temporal_Object"/>
+        <NamedIndividual IRI="#Burundi_Object_exists"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#becomes"/>
+        <Class IRI="#Temporal_Object"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MaputoUnion"/>
@@ -67,34 +67,43 @@
         <DataProperty IRI="#Status"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#VectorFact"/>
+        <ObjectProperty IRI="#split_into"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#temporal_overlaps"/>
+        <ObjectProperty IRI="#merged_into"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VectorFact"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#equals"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#temporal_overlaps"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_overlap"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Interval_Object"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#during"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Cidade_de_maputo_concept"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Interval_Object"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#manhica2:2009:2013"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#during"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Spatial_Overlap"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#municipal1:1990:2013"/>
+        <ObjectProperty IRI="#overlap_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#overlap_of"/>
+        <NamedIndividual IRI="#municipal1:1990:2013"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Split_Event"/>
@@ -109,10 +118,10 @@
         <ObjectProperty IRI="#has_facet"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#GAUL_Properties"/>
+        <DataProperty IRI="#ADM0_Code"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM0_Code"/>
+        <DataProperty IRI="#GAUL_Properties"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ManhicaUnion"/>
@@ -148,10 +157,10 @@
         <ObjectProperty IRI="#begins"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#manhica:1990:2009"/>
+        <DataProperty IRI="#Dataset_Properties"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Dataset_Properties"/>
+        <NamedIndividual IRI="#manhica:1990:2009"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Destroyed_Event"/>
@@ -169,10 +178,10 @@
         <ObjectProperty IRI="#split"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
+        <Class IRI="#Point_Object"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Point_Object"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#created"/>
@@ -223,13 +232,10 @@
         <NamedIndividual IRI="#maputo_split_bounding_box_1"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relation_of"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Fact"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Becomes_Event"/>
+        <ObjectProperty IRI="#relation_of"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maputo:2013:3000"/>
@@ -241,19 +247,19 @@
         <NamedIndividual IRI="#municipal_1_disp_1"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#aeroporto:1990:2013"/>
+        <ObjectProperty IRI="#aspect_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#aspect_of"/>
+        <NamedIndividual IRI="#aeroporto:1990:2013"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ADM2_Name"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#aero_split_disp_1"/>
+        <NamedIndividual IRI="#earlyTime:1900:1989"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#earlyTime:1900:1989"/>
+        <NamedIndividual IRI="#aero_split_disp_1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#municipal_1_adm2_code_1"/>
@@ -283,6 +289,9 @@
         <ObjectProperty IRI="#ends"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Became_Event"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Database_Object"/>
     </Declaration>
     <Declaration>
@@ -292,19 +301,16 @@
         <DataProperty IRI="#at_temporal"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#exists_at"/>
+        <ObjectProperty IRI="#after"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#after"/>
+        <DataProperty IRI="#exists_at"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#begin:1980:1990"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#disjoint"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#manhica2:1990:2013"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#database_from"/>
@@ -331,13 +337,13 @@
         <Class IRI="#GAUL"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#manhica1:2009:2013"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RasterFact"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#SOverlap"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#manhica1:2009:2013"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#EXP2_Year"/>
@@ -358,16 +364,16 @@
         <NamedIndividual IRI="#test_valid_at"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#end_temporal"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#Spatial_Relation"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#municipal_1_bounding_box_1"/>
+        <DataProperty IRI="#end_temporal"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#merged"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#municipal_1_bounding_box_1"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#destroyed"/>
@@ -385,10 +391,10 @@
         <Class IRI="#Valid_Object"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM1_Name"/>
+        <NamedIndividual IRI="#maputo_aero_relation"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_aero_relation"/>
+        <DataProperty IRI="#ADM1_Name"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Trestle_Object"/>
@@ -427,10 +433,10 @@
         <ObjectProperty IRI="#has_component"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#maputo_split_disp_area_1"/>
+        <DataProperty IRI="#ADM0_Name"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#ADM0_Name"/>
+        <NamedIndividual IRI="#maputo_split_disp_area_1"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#Event_Relation"/>
@@ -440,7 +446,7 @@
         <Class IRI="#Fact"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Becomes_Event"/>
+        <Class IRI="#Became_Event"/>
         <Class IRI="#Trestle_Event"/>
     </SubClassOf>
     <SubClassOf>
@@ -584,7 +590,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#GAUL"/>
-        <NamedIndividual IRI="#manhica2:1990:2013"/>
+        <NamedIndividual IRI="#manhica2:2009:2013"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#GAUL"/>
@@ -614,10 +620,10 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has_component"/>
         <NamedIndividual IRI="#ManhicaUnion"/>
-        <NamedIndividual IRI="#manhica2:1990:2013"/>
+        <NamedIndividual IRI="#manhica2:2009:2013"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#split_from"/>
+        <ObjectProperty IRI="#split"/>
         <NamedIndividual IRI="#ManhicaUnion"/>
         <NamedIndividual IRI="#manhica:1990:2009"/>
     </ObjectPropertyAssertion>
@@ -1098,12 +1104,12 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#exists_from"/>
-        <NamedIndividual IRI="#manhica2:1990:2013"/>
+        <NamedIndividual IRI="#manhica2:2009:2013"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2009-01-01T00:00:00Z</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#exists_to"/>
-        <NamedIndividual IRI="#manhica2:1990:2013"/>
+        <NamedIndividual IRI="#manhica2:2009:2013"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-01T00:00:00Z</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
@@ -1160,7 +1166,7 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#becomes"/>
+        <ObjectProperty IRI="#became"/>
         <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1240,6 +1246,10 @@
         <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#merged_into"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#modified"/>
         <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
@@ -1253,6 +1263,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#split_from"/>
+        <ObjectProperty IRI="#Event_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#split_into"/>
         <ObjectProperty IRI="#Event_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1304,16 +1318,16 @@
         <ObjectProperty IRI="#relation_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#merged"/>
         <ObjectProperty IRI="#merged_from"/>
+        <ObjectProperty IRI="#merged_into"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#related_by"/>
         <ObjectProperty IRI="#related_to"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#split"/>
         <ObjectProperty IRI="#split_from"/>
+        <ObjectProperty IRI="#split_into"/>
     </InverseObjectProperties>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#disjoint"/>
@@ -1335,6 +1349,9 @@
     </SymmetricObjectProperty>
     <SymmetricObjectProperty>
         <ObjectProperty IRI="#spatial_overlaps"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#split"/>
     </SymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#begins"/>
@@ -1412,8 +1429,8 @@
         <Class IRI="#Trestle_Object"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#becomes"/>
-        <Class IRI="#Becomes_Event"/>
+        <ObjectProperty IRI="#became"/>
+        <Class IRI="#Became_Event"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#component_of"/>
@@ -1493,14 +1510,7 @@
             <ObjectProperty IRI="#component_of"/>
             <ObjectProperty IRI="#merged"/>
         </ObjectPropertyChain>
-        <ObjectProperty IRI="#merged"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectPropertyChain>
-            <ObjectProperty IRI="#component_of"/>
-            <ObjectProperty IRI="#split_from"/>
-        </ObjectPropertyChain>
-        <ObjectProperty IRI="#split_from"/>
+        <ObjectProperty IRI="#merged_into"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
@@ -1549,7 +1559,7 @@
             <ObjectProperty IRI="#split"/>
             <ObjectProperty IRI="#has_component"/>
         </ObjectPropertyChain>
-        <ObjectProperty IRI="#split"/>
+        <ObjectProperty IRI="#split_into"/>
     </SubObjectPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#ADM0_Code"/>
