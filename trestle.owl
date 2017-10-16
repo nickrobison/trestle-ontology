@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://nickrobison.com/dissertation/trestle.owl"
-     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.9.3">
+     versionIRI="http://nickrobison.com/dissertation/trestle.owl/0.9.4">
     <Prefix name="" IRI="http://nickrobison.com/dissertation/trestle.owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -16,7 +16,8 @@
     <Import>http://www.opengis.net/ont/geosparql</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.9.3 - Revised spatial and temporal relations
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.9.4 - Added component_with relationship
+0.9.3 - Revised spatial and temporal relations
 0.9.2 - Added event types
 0.9.1 - Fixed reasoner inconsistency issues.
 0.9 - Major refactor of entity relationships. Serious breaking changes.
@@ -269,6 +270,9 @@
         <NamedIndividual IRI="#aero_split_disp_1"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#Component_Relation"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#municipal_1_adm2_code_1"/>
     </Declaration>
     <Declaration>
@@ -339,6 +343,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#has_aspect"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#component_with"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GAUL"/>
@@ -1190,6 +1197,14 @@
         <ObjectProperty IRI="#Temporal_Relation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#component_of"/>
+        <ObjectProperty IRI="#Component_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#component_with"/>
+        <ObjectProperty IRI="#Component_Relation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#contains"/>
         <ObjectProperty IRI="#Spatial_Relation"/>
     </SubObjectPropertyOf>
@@ -1550,6 +1565,13 @@
             <ObjectProperty IRI="#during"/>
         </ObjectPropertyChain>
         <ObjectProperty IRI="#before"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#component_of"/>
+            <ObjectProperty IRI="#has_component"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#component_with"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
